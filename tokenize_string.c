@@ -7,7 +7,7 @@
 
 void string_parser(void)
 {
-	char *delim = " \t\n";
+	char *delim = " \n";
 	char *linecopy = NULL;
 	char *token = NULL;
 	int i = 0;
