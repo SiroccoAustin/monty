@@ -13,10 +13,9 @@ void push(stack_t **stack, unsigned int line_number)
 
 	if (information->num_tokens <= 1 || !(is_digit(information->tokenized[1])))
 	{
-       	 	dprintf(2, "L%d: usage: push integer\n", line_number);
-        	fclose(information->stream);
+		dprintf(2, "L%d: usage: push integer\n", line_number);
         	free_args();
-        	exit(EXIT_FAILURE);
+		exit(EXIT_FAILURE);
 	}
 	*stack = malloc(sizeof(stack_t));
 	if (*stack == NULL)
