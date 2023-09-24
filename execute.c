@@ -28,5 +28,5 @@ void execute(void)
 		}
 		i++;
 	}
-	invalid_information();
+	/*invalid_information();*/
 }

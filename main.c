@@ -30,5 +30,7 @@ int main (int ac, char **av)
 		execute();
 		run_codes();
 	}
+	close_stream();
+	free_token();
 	return (0);
 }

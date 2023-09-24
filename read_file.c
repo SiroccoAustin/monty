@@ -8,7 +8,7 @@
 
 void failed_stream(char *filename)
 {
-	dprintf(stderr, "Error: Can't open file\n", filename);
+	fprintf(stderr, "Error: Can't open file %s\n", filename);
 	free_args();
 	exit(EXIT_FAILURE);
 }
@@ -25,12 +25,12 @@ void read_stream(char *filename)
 
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
-		failure_stream(filename);
+		failed_stream(filename);
 	information->stream = fdopen(fd, "r");
 	if (information->stream == NULL)
 	{
 		close(fd);
-		failure_stream(filename);
+		failed_stream(filename);
 	}
 		
 }
