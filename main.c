@@ -26,12 +26,14 @@ int main (int ac, char **av)
 	while (getline(&information->buffer, &n, information->stream) != -1)
 	{
 		/*tokenize function()*/
+		information->line_number += 1;
 		string_parser();
+		invalid_information();
 		execute();
 		run_codes();
+		free_token();
 	}
 	close_stream();
-	free_token();
 	free_args();
 	return (0);
 }
