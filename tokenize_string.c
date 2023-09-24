@@ -11,9 +11,8 @@ void string_parser(void)
 	char *linecopy = NULL;
 	char *token = NULL;
 	int i = 0;
-	linecopy = malloc(sizeof(char) * strlen(information->buffer) + 1);
 
-	strcpy(linecopy, information->buffer);
+	linecopy =  strdup(information->buffer);
 	token = strtok(linecopy, delim);
 	while (token != NULL)
 	{
@@ -26,7 +25,6 @@ void string_parser(void)
 	token = strtok(linecopy, delim);
 	while (token != NULL)
 	{
-		information->tokenized[i] = malloc(sizeof(char) * strlen(token) + 1);
 		if (information->tokenized[i] == NULL)
 			malloc_failure();
 
@@ -35,4 +33,5 @@ void string_parser(void)
 		i++;
 	}
 	information->tokenized[i] = NULL;
+	free(linecopy);
 }

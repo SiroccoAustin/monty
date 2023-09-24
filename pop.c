@@ -13,10 +13,10 @@ void pop(stack_t **stack, unsigned int line_number)
 	(void) *stack;
 	if (information->head == NULL)
 	{
-		dprintf(2, "L%d: can't pop an empty stack", line_number);
-		free(information->head);
-		information->head = NULL;
-		exit(EXIT_FAILURE);
+        	fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
+        	fclose(information->stream);
+        	free_args();
+        	exit(EXIT_FAILURE);
 	}	
 	temp = information->head;
 	information->head = temp->next;

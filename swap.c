@@ -22,9 +22,10 @@ void swap(stack_t **stack, unsigned int line_number)
 	}
 	if (length < 2)
 	{
-		fprintf(stderr, "L%d: can't swap, stack too short", line_number);
-		free(information->head);
-		exit(EXIT_FAILURE);
+        	fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
+        	fclose(information->stream);
+        	free_args();
+        	exit(EXIT_FAILURE);
 	}
 
 	top = information->head;

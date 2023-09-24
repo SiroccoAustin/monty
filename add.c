@@ -15,7 +15,8 @@ void add(stack_t **stack, unsigned int line_number)
 	if (information->head == NULL || information->head->next == NULL)
 	{
 		dprintf(2, "L%d: can't add, stack too short\n", line_number);
-
+		fclose(information->stream);
+		free_args();
 		exit(EXIT_FAILURE);
 	}
 
