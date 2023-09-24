@@ -13,7 +13,7 @@ void pall(stack_t **stack, unsigned int line_number)
 
 	if (information->head == NULL)
 	{
-		fprintf(stderr, "L%d: can't pall, stack is empty\n", line_number);
+		dprintf(2, "L%d: can't pall, stack is empty\n", line_number);
 		fclose(information->stream);
 		free_args();
 		exit(EXIT_FAILURE);
