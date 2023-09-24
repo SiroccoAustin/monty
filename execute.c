@@ -17,7 +17,8 @@ void execute(void)
 		{NULL, NULL}
 	};
 	int i = 0;
-
+	if (information->num_tokens == 0)
+		return;
 	while (arr[i].opcode)
 	{
 		if (strcmp(arr[i].opcode, information->tokenized[0]) == 0)
