@@ -32,5 +32,6 @@ int main (int ac, char **av)
 	}
 	close_stream();
 	free_token();
+	free_args();
 	return (0);
 }
